@@ -1,0 +1,23 @@
+{
+  "id": "741f4110-8aee-4c8c-869a-c6dcda84813c",
+  "enqueuedAt": 1773219575024,
+  "channel": "clawdbot-dingtalk",
+  "to": "heartbeat",
+  "payloads": [
+    {
+      "text": "🟢 心跳正常 | 2026-03-11 16:58 | 无待办",
+      "replyToTag": false,
+      "replyToCurrent": false,
+      "audioAsVoice": false
+    }
+  ],
+  "gifPlayback": false,
+  "mirror": {
+    "sessionKey": "agent:main:clawdbot-dingtalk:group:heartbeat",
+    "agentId": "main",
+    "text": "🟢 心跳正常 | 2026-03-11 16:58 | 无待办"
+  },
+  "retryCount": 1,
+  "lastAttemptAt": 1773219575216,
+  "lastError": "HTTP 400: {\"requestid\":\"DB2A206D-CB3D-765E-B97E-FFB681BA7927\",\"code\":\"staffId.notExisted\",\"message\":\"错误描述: staff 不存在；解决方案:请确认 userIds 是否正确；\"}"
+}

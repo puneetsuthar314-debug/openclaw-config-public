@@ -1,0 +1,16 @@
+{
+  "id": "a501fa22-3eb8-4a1f-be3e-7daea2d524dc",
+  "enqueuedAt": 1773298069899,
+  "channel": "clawdbot-dingtalk",
+  "to": "cidUTPeZrUIIoG6H5/e1Rh3WADZ/z3vWCJcglUWC3Un8DY=",
+  "accountId": "default",
+  "payloads": [
+    {
+      "text": "🟢 心跳正常 | 2026-03-12 14:47 | 无待办",
+      "mediaUrls": []
+    }
+  ],
+  "retryCount": 1,
+  "lastAttemptAt": 1773298069964,
+  "lastError": "HTTP 400: {\"requestid\":\"E8FFCDBD-9725-76A6-B027-000F472ACB29\",\"code\":\"resource.not.found\",\"message\":\"错误描述: robot 不存在；解决方案:请确认 robotCode 是否正确；\"}"
+}

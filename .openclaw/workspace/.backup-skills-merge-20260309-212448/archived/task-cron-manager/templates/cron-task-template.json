@@ -1,0 +1,24 @@
+{
+  "id": "unique-task-id",
+  "name": "任务名称",
+  "enabled": true,
+  "schedule": {
+    "kind": "cron",
+    "expr": "30 7 * * *",
+    "tz": "Asia/Shanghai"
+  },
+  "limits": {
+    "maxRuns": 10,
+    "currentRuns": 0,
+    "expireAt": "2026-03-09T00:00:00+08:00"
+  },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "直接输出以下内容（禁止调用工具）：任务内容"
+  },
+  "delivery": {
+    "mode": "announce",
+    "channel": "clawdbot-dingtalk",
+    "to": "target"
+  }
+}

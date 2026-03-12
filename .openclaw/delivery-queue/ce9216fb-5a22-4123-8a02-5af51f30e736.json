@@ -1,0 +1,23 @@
+{
+  "id": "ce9216fb-5a22-4123-8a02-5af51f30e736",
+  "enqueuedAt": 1773248527562,
+  "channel": "clawdbot-dingtalk",
+  "to": "cidUTPeZrUIIoG6H5/e1Rh3WADZ/z3vWCJcglUWC3Un8DY=",
+  "accountId": "default",
+  "payloads": [
+    {
+      "text": "✅ New session started · model: dashscope/qwen3.5-plus"
+    }
+  ],
+  "threadId": null,
+  "replyToId": null,
+  "mirror": {
+    "sessionKey": "agent:main:dingtalk:dm:manager20",
+    "agentId": "main",
+    "text": "✅ New session started · model: dashscope/qwen3.5-plus",
+    "mediaUrls": []
+  },
+  "retryCount": 1,
+  "lastAttemptAt": 1773248527618,
+  "lastError": "HTTP 400: {\"requestid\":\"B6021406-FEBA-7776-BA95-6ECE5A338F2B\",\"code\":\"resource.not.found\",\"message\":\"错误描述: robot 不存在；解决方案:请确认 robotCode 是否正确；\"}"
+}

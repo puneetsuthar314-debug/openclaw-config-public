@@ -1,0 +1,42 @@
+# OpenClaw Workspace Git Ignore
+
+## 临时文件
+*.tmp
+*.temp
+downloads/*
+pending_uploads/*
+files/temp/*
+
+# 缓存
+__pycache__/
+*.py[cod]
+.cache/
+.openclaw/cache/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+logs/
+
+# 敏感信息（如需要）
+# *.key
+# *.pem
+# secrets/
+
+# 大文件
+*.zip
+*.tar.gz
+*.large
+
+# 会话状态（可选）
+# memory/heartbeat-state.json

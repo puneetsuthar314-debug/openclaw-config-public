@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-03-09T17:48:21.072221",
+  "results": [
+    {
+      "error": "DuckDuckGo search failed: 'type' object is not subscriptable",
+      "source": "DuckDuckGo"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "a6be4e97-ae93-4842-8b88-3d0a3d22a4ff",
+  "enqueuedAt": 1773300558411,
+  "channel": "clawdbot-dingtalk",
+  "to": "heartbeat",
+  "payloads": [
+    {
+      "text": "🟢 心跳正常 | 2026-03-12 15:28 | 无待办",
+      "mediaUrls": []
+    }
+  ],
+  "retryCount": 1,
+  "lastAttemptAt": 1773300558509,
+  "lastError": "HTTP 400: {\"requestid\":\"D87E5286-5CAE-77D1-AA55-313CDF9AED17\",\"code\":\"staffId.notExisted\",\"message\":\"错误描述: staff 不存在；解决方案:请确认 userIds 是否正确；\"}"
+}

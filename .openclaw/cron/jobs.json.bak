@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "daily-skill-review-001",
+      "name": "每日技能审查与整理",
+      "enabled": true,
+      "createdAtMs": 1772956800000,
+      "updatedAtMs": 1773255628495,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 3 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行脚本：python3 /root/.openclaw/workspace/scripts/daily-skill-review.py"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "manager20",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773342000000,
+        "lastRunAtMs": 1773255600007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 28488,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "auto-backup-daily",
+      "name": "自动备份",
+      "enabled": true,
+      "createdAtMs": 1772956800000,
+      "updatedAtMs": 1773170108144,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 3 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行脚本：python3 /root/.openclaw/workspace/scripts/auto-backup.py"
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "manager20",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773256500000,
+        "lastRunAtMs": 1773170100007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 8137,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true,
+        "runningAtMs": 1773256500003
+      }
+    },
+    {
+      "id": "weekly-cleanup-sun",
+      "name": "每周清理",
+      "enabled": true,
+      "createdAtMs": 1772956800000,
+      "updatedAtMs": 1773051933300,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 3 * * 0",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "运行脚本：python3 /root/.openclaw/workspace/scripts/weekly-cleanup.py"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "manager20",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1773512400000,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "ok",
+        "consecutiveErrors": 0
+      }
+    }
+  ]
+}

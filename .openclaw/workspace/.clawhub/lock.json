@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "writing-assistant": {
+      "version": "0.1.0",
+      "installedAt": 1772903644706
+    },
+    "content-ideas-free": {
+      "version": "1.0.0",
+      "installedAt": 1772903713577
+    },
+    "content-writer": {
+      "version": "1.0.0",
+      "installedAt": 1772904129348
+    },
+    "reflection": {
+      "version": "1.1.0",
+      "installedAt": 1772904971602
+    },
+    "superpowers-mode": {
+      "version": "1.0.1",
+      "installedAt": 1772940064695
+    },
+    "excel-xlsx": {
+      "version": "1.0.1",
+      "installedAt": 1772941146395
+    },
+    "markdown-converter": {
+      "version": "1.0.0",
+      "installedAt": 1772941386946
+    }
+  }
+}

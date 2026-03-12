@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "87c737a3-eae1-49c0-ab82-092733cb9dbb",
+      "name": "王浩哲起床提醒",
+      "enabled": true,
+      "createdAtMs": 1772946623909,
+      "updatedAtMs": 1772946623909,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "直接输出以下内容（禁止调用工具）：@王浩哲 起床啦！⏰ 新的一天开始了，快起床吧～"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "dingtalk:group:cidp3l70P5ABESCu3n1KMUzdw=="
+      },
+      "state": {
+        "nextRunAtMs": 1773012600000
+      }
+    },
+    {
+      "id": "58976aab-3f61-4e08-84a9-f83e8458affd",
+      "name": "林宇轩早起提醒",
+      "enabled": true,
+      "createdAtMs": 1772946673249,
+      "updatedAtMs": 1772946673249,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "直接输出以下内容（禁止调用工具）：⏰ 宇轩，早上好！该起床啦～ 新的一天开始咯！🦞"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "dingtalk:group:cid6F7sSJGwWuopioQcTf/RYg=="
+      },
+      "state": {
+        "nextRunAtMs": 1773012600000
+      }
+    },
+    {
+      "id": "c1486da8-4d14-48ad-b718-13d47e23f69b",
+      "name": "ljx 起床提醒",
+      "enabled": true,
+      "createdAtMs": 1772954114200,
+      "updatedAtMs": 1772954114200,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 7 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "直接输出以下内容（禁止调用工具）：@ljx 起床啦！⏰ 新的一天开始了，快起床吧～"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "dingtalk:group:cidp3l70P5ABESCu3n1KMUzdw=="
+      },
+      "state": {
+        "nextRunAtMs": 1773012600000
+      }
+    },
+    {
+      "id": "cf7dae37-3789-4a8f-a5e8-8d9427cbce07",
+      "name": "张以勒起床提醒",
+      "enabled": true,
+      "createdAtMs": 1772954229352,
+      "updatedAtMs": 1772954229352,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 6 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "直接输出以下内容（禁止调用工具）：@张以勒 起床啦！⏰ 新的一天开始了，快起床吧～"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "dingtalk:group:cidp3l70P5ABESCu3n1KMUzdw=="
+      },
+      "state": {
+        "nextRunAtMs": 1773009000000
+      }
+    },
+    {
+      "id": "4c940b35-fd46-4eeb-888e-fc393aadebe4",
+      "name": "张以勒私聊起床提醒",
+      "enabled": true,
+      "createdAtMs": 1772954267804,
+      "updatedAtMs": 1772954267804,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 6 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "直接输出以下内容（禁止调用工具）：起床啦！⏰ 新的一天开始了，快起床吧～"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "manager20"
+      },
+      "state": {
+        "nextRunAtMs": 1773009000000
+      }
+    },
+    {
+      "id": "967811be-bc92-4032-91f0-14df170e69e3",
+      "name": "王浩哲午间问候",
+      "enabled": true,
+      "createdAtMs": 1772954401614,
+      "updatedAtMs": 1772954401614,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "直接输出以下内容（禁止调用工具）：@王浩哲 牛魔"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "clawdbot-dingtalk",
+        "to": "dingtalk:group:cidp3l70P5ABESCu3n1KMUzdw=="
+      },
+      "state": {
+        "nextRunAtMs": 1773028800000
+      }
+    }
+  ]
+}
