@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-03-09T16:45:40.012239",
+  "results": [
+    {
+      "error": "DuckDuckGo search failed: https://www.bing.com/search?q=%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9C%80%E6%96%B0%E8%BF%9B%E5%B1%95 return None. params={'q': '人工智能最新进展'} content=None data=None",
+      "source": "DuckDuckGo"
+    }
+  ]
+}

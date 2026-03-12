@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-03-09T17:05:24.395759",
+  "results": [
+    {
+      "error": "DuckDuckGo search failed: ('error sending request for url (https://news.search.yahoo.com/search?p=2026%E5%B9%B4%E7%A7%91%E6%8A%80%E6%96%B0%E9%97%BB)', 'https://news.search.yahoo.com/search?p=2026%E5%B9%B4%E7%A7%91%E6%8A%80%E6%96%B0%E9%97%BB')",
+      "source": "DuckDuckGo"
+    }
+  ]
+}

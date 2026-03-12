@@ -1,0 +1,9 @@
+# 运行时生成的临时文件
+*.log
+update-check.json
+clawsec-suite-feed-state.json
+
+# 绝对不要提交真实凭证
+# 如果你替换了占位符，确保不要提交
+*.real
+*.secret
