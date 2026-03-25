@@ -1,0 +1,399 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-25T01:15:14.964Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-18T10:38:34.935Z",
+    "lastRunVersion": "2026.3.7",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "enabled": true,
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "clawd",
+    "profiles": {
+      "clawd": {
+        "cdpPort": 18800,
+        "color": "#FF4500"
+      }
+    },
+    "extraArgs": [
+      "--disable-gpu",
+      "--disable-software-rasterizer",
+      "--disable-dev-shm-usage",
+      "--no-zygote",
+      "--single-process",
+      "--disable-extensions",
+      "--disable-background-networking",
+      "--no-first-run",
+      "--renderer-process-limit=4",
+      "--js-flags=--max-old-space-size=4096",
+      "--disable-features=TranslateUI",
+      "--disable-component-update"
+    ]
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "dashscope": {
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "apiKey": "${DASHSCOPE_API_KEY}",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3.5-plus",
+            "name": "Qwen3.5 Plus",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 1000000,
+            "maxTokens": 65536,
+            "compat": {
+              "supportsDeveloperRole": false,
+              "supportsStrictMode": false,
+              "thinkingFormat": "qwen"
+            }
+          },
+          {
+            "id": "qwen3-max-2026-01-23",
+            "name": "Qwen3 Max Thinking",
+            "reasoning": true,
+            "contextWindow": 262144,
+            "maxTokens": 65536,
+            "compat": {
+              "supportsDeveloperRole": false,
+              "supportsStrictMode": false,
+              "thinkingFormat": "qwen"
+            }
+          },
+          {
+            "id": "qwen3-coder-next",
+            "name": "Qwen3 Coder Next",
+            "reasoning": false,
+            "contextWindow": 262144,
+            "maxTokens": 65536
+          },
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax-M2.5",
+            "reasoning": true,
+            "contextWindow": 204800,
+            "maxTokens": 131072,
+            "compat": {
+              "supportsDeveloperRole": false,
+              "supportsStrictMode": false,
+              "thinkingFormat": "qwen"
+            }
+          },
+          {
+            "id": "qwen3-coder-plus",
+            "name": "Qwen3 Coder Plus",
+            "reasoning": false,
+            "contextWindow": 1000000,
+            "maxTokens": 65536
+          },
+          {
+            "id": "glm-5",
+            "name": "GLM-5",
+            "reasoning": true,
+            "contextWindow": 202752,
+            "maxTokens": 16384,
+            "compat": {
+              "supportsDeveloperRole": false,
+              "supportsStrictMode": false,
+              "thinkingFormat": "qwen"
+            }
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7",
+            "reasoning": true,
+            "contextWindow": 169984,
+            "maxTokens": 16384,
+            "compat": {
+              "supportsDeveloperRole": false,
+              "supportsStrictMode": false,
+              "thinkingFormat": "qwen"
+            }
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "contextWindow": 262144,
+            "maxTokens": 262144,
+            "compat": {
+              "supportsDeveloperRole": false,
+              "supportsStrictMode": false,
+              "thinkingFormat": "qwen"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "dashscope/qwen3.5-plus",
+        "fallbacks": [
+          "dashscope/qwen3-max-2026-01-23",
+          "dashscope/kimi-k2.5"
+        ]
+      },
+      "models": {
+        "dashscope/qwen3.5-plus": {},
+        "dashscope/qwen3-max-2026-01-23": {},
+        "dashscope/qwen3-coder-next": {},
+        "dashscope/qwen3-coder-plus": {},
+        "dashscope/MiniMax-M2.5": {},
+        "dashscope/glm-5": {},
+        "dashscope/glm-4.7": {},
+        "dashscope/kimi-k2.5": {}
+      },
+      "memorySearch": {
+        "enabled": true
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "memoryFlush": {
+          "enabled": true,
+          "softThresholdTokens": 4000,
+          "prompt": "请将本次会话中的关键信息、决策和经验教训写入 memory/ 目录下的今日文件；如无需保存，回复 NO_REPLY。",
+          "systemPrompt": "会话即将压缩。请立即将重要记忆写入 memory/YYYY-MM-DD.md。"
+        }
+      },
+      "subagents": {
+        "maxConcurrent": 5,
+        "archiveAfterMinutes": 120,
+        "runTimeoutSeconds": 900
+      },
+      "sandbox": {
+        "mode": "off",
+        "workspaceAccess": "rw",
+        "scope": "agent"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "default": true,
+        "workspace": "~/.openclaw/workspace",
+        "subagents": {
+          "allowAgents": [
+            "coder",
+            "researcher"
+          ]
+        },
+        "tools": {
+          "deny": [
+            "exec"
+          ]
+        }
+      },
+      {
+        "id": "coder",
+        "workspace": "~/.openclaw/workspace-coding",
+        "model": {
+          "primary": "dashscope/qwen3-coder-plus",
+          "fallbacks": [
+            "dashscope/qwen3-coder-next",
+            "dashscope/qwen3.5-plus"
+          ]
+        }
+      },
+      {
+        "id": "researcher",
+        "workspace": "~/.openclaw/workspace-researcher",
+        "model": {
+          "primary": "dashscope/kimi-k2.5",
+          "fallbacks": [
+            "dashscope/qwen3-max-2026-01-23",
+            "dashscope/qwen3.5-plus"
+          ]
+        },
+        "tools": {
+          "deny": [
+            "write",
+            "edit",
+            "apply_patch"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "profile": "full",
+    "deny": [],
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "kimi",
+        "maxResults": 10,
+        "timeoutSeconds": 60,
+        "cacheTtlMinutes": 30,
+        "kimi": {
+          "apiKey": "${DASHSCOPE_API_KEY}",
+          "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+          "model": "qwen3.5-plus"
+        }
+      },
+      "fetch": {
+        "enabled": true,
+        "maxChars": 80000,
+        "maxCharsCap": 80000,
+        "timeoutSeconds": 60,
+        "cacheTtlMinutes": 30,
+        "maxRedirects": 5,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+      }
+    },
+    "sessions": {
+      "visibility": "all"
+    },
+    "agentToAgent": {
+      "enabled": true,
+      "allow": [
+        "main",
+        "coder",
+        "researcher"
+      ]
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "clawdbot-dingtalk"
+      }
+    }
+  ],
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "reset": {
+      "mode": "idle",
+      "idleMinutes": 1440
+    }
+  },
+  "channels": {
+    "clawdbot-dingtalk": {
+      "enabled": true,
+      "clientId": "${DINGTALK_CLIENT_ID}",
+      "clientSecret": "${DINGTALK_CLIENT_SECRET}",
+      "replyMode": "markdown",
+      "conversation": {
+        "allowFrom": "allowlist",
+        "allowFromAllowlist": [
+          "manager20"
+        ]
+      },
+      "aliyunMcp": {
+        "timeoutSeconds": 120,
+        "tools": {
+          "webSearch": {
+            "enabled": true
+          },
+          "codeInterpreter": {
+            "enabled": true
+          },
+          "webParser": {
+            "enabled": true
+          },
+          "wan26Media": {
+            "enabled": true,
+            "autoSendToDingtalk": true
+          }
+        },
+        "apiKey": "${DASHSCOPE_API_KEY}"
+      },
+      "maxChars": 3500,
+      "markdownFallback": "text",
+      "robotCode": "${DINGTALK_CLIENT_ID}"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "${GATEWAY_AUTH_TOKEN}"
+    },
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        },
+        "responses": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "skills": {
+    "entries": {
+      "mcporter": {
+        "enabled": false
+      },
+      "unified-search": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "allow": [
+      "clawdbot-dingtalk",
+      "lossless-claw"
+    ],
+    "load": {
+      "paths": [
+        "/usr/lib/node_modules/clawdbot-dingtalk",
+        "/root/.openclaw/extensions/lossless-claw"
+      ]
+    },
+    "slots": {
+      "memory": "none",
+      "contextEngine": "lossless-claw"
+    },
+    "entries": {
+      "clawdbot-dingtalk": {
+        "enabled": true,
+        "config": {
+          "aliyunMcp": {
+            "tools": {
+              "webSearch": {
+                "enabled": false
+              }
+            }
+          }
+        }
+      },
+      "lossless-claw": {
+        "enabled": true,
+        "config": {
+          "freshTailCount": 32,
+          "contextThreshold": 0.75,
+          "incrementalMaxDepth": -1,
+          "summaryModel": "dashscope/qwen3-coder-next",
+          "ignoreSessionPatterns": [
+            "agent:*:cron:**"
+          ]
+        }
+      }
+    }
+  }
+}

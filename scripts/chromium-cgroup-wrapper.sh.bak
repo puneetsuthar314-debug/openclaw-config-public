@@ -1,0 +1,20 @@
+# 将 Chromium 进程移入内存受限的 cgroup
+# 每 2 分钟检查一次，将未受限的 chromium 进程移入限制组
+
+MEMORY_LIMIT_BYTES=3221225472  # 3G
+
+# 确保 cgroup 目录存在
+CGROUP_PATH=/sys/fs/cgroup/memory/chromium_limit
+if [ ! -d "$CGROUP_PATH" ]; then
+    mkdir -p "$CGROUP_PATH"
+    echo $MEMORY_LIMIT_BYTES > "$CGROUP_PATH/memory.limit_in_bytes"
+    echo "[cgroup] Created chromium_limit cgroup with 3G limit"
+fi
+
+# 将所有 chromium 进程移入限制组
+for pid in $(pgrep -f chromium-browse 2>/dev/null); do
+    current_cgroup=$(cat /proc/$pid/cgroup 2>/dev/null | grep memory | cut -d: -f3)
+    if [ "$current_cgroup" != "/chromium_limit" ]; then
+        echo $pid > "$CGROUP_PATH/cgroup.procs" 2>/dev/null &&             echo "[cgroup] Moved chromium PID $pid to chromium_limit" || true
+    fi
+done

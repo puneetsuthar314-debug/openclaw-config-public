@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-filesystem",
+        "/root/.openclaw/workspace",
+        "/root/.openclaw/workspace/memory",
+        "/root/Downloads",
+        "/tmp",
+        "/root/server_knowledge_base"
+      ]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-fetch"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless"
+      ],
+      "env": {
+        "DISPLAY": ""
+      }
+    }
+  }
+}

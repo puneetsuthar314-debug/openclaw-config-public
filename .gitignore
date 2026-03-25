@@ -1,0 +1,18 @@
+# 敏感文件
+.env
+.env.bak*
+*.key
+*.pem
+identity/
+device*.json
+
+# 运行时数据
+lcm.db
+lcm.db-*
+delivery-queue/
+node_modules/
+*.log
+
+# 大文件
+*.mp4
+*.db
