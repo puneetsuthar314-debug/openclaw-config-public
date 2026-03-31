@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.3.13",
-    "lastTouchedAt": "2026-03-25T09:32:59.538Z"
+    "lastTouchedVersion": "2026.3.24",
+    "lastTouchedAt": "2026-03-26T04:50:31.663Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-18T10:38:34.935Z",
@@ -161,7 +161,7 @@
         "dashscope/kimi-k2.5": {}
       },
       "memorySearch": {
-        "enabled": true
+        "enabled": false
       },
       "compaction": {
         "mode": "safeguard",
@@ -240,12 +240,7 @@
         "provider": "kimi",
         "maxResults": 10,
         "timeoutSeconds": 60,
-        "cacheTtlMinutes": 30,
-        "kimi": {
-          "apiKey": "${DASHSCOPE_API_KEY}",
-          "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
-          "model": "qwen3.5-plus"
-        }
+        "cacheTtlMinutes": 30
       },
       "fetch": {
         "enabled": true,
@@ -305,13 +300,13 @@
         "timeoutSeconds": 120,
         "tools": {
           "webSearch": {
-            "enabled": true
+            "enabled": false
           },
           "codeInterpreter": {
             "enabled": true
           },
           "webParser": {
-            "enabled": true
+            "enabled": false
           },
           "wan26Media": {
             "enabled": true,
@@ -392,6 +387,16 @@
           "ignoreSessionPatterns": [
             "agent:*:cron:**"
           ]
+        }
+      },
+      "moonshot": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "${DASHSCOPE_API_KEY}",
+            "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+            "model": "qwen3.5-plus"
+          }
         }
       }
     }
